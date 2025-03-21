@@ -6,10 +6,8 @@ from snowflake.snowpark.functions import col
 st.title("🥤 Pending Smoothie Orders 🥤")
 st.write("Orders that need to be filled.")
 
-# Establish Snowflake connection
-cnx = st.connection("snowflake")
+cnx=st.connection("snowflake")
 session = cnx.session()
-
 
 # Fetch unfilled orders
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED") == False).select(
