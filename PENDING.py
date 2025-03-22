@@ -1,5 +1,4 @@
 import streamlit as st
-
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
@@ -9,6 +8,7 @@ st.write("Orders that need to be filled.")
 # Establish Snowflake connection
 cnx = st.connection("snowflake")
 session = cnx.session()
+
 # Fetch unfilled orders
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED") == False).select(
     col("INGREDIENTS"),
