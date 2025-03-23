@@ -1,7 +1,6 @@
 import streamlit as st
-import pandas as pd
 from snowflake.snowpark.functions import col
-import requests
+
 
 # Write directly to the app
 st.title("🥤 Pending Smoothie Orders 🥤")
