@@ -1,12 +1,11 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-
 # Write directly to the app
 st.title("🥤 Pending Smoothie Orders 🥤")
 st.write("Orders that need to be filled.")
 
-# Establish Snowflake connection
+# Establish Snowflake connection using Streamlit's connection management
 cnx = st.connection("snowflake")
 session = cnx.session()
 
